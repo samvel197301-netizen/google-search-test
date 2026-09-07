@@ -56,8 +56,6 @@ app.get("/api/search", async (req, res) => {
 
 module.exports = { formatResults };
 
-const PORT = process.env.PORT || 3000;
-
 app.listen(PORT, "0.0.0.0", () => {
     console.log(`Server běží na portu http://localhost:${PORT}`);
 });
