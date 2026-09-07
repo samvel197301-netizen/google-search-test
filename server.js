@@ -3,7 +3,7 @@ const path = require("path");
 require("dotenv").config();
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.static(__dirname));
 
@@ -56,6 +56,8 @@ app.get("/api/search", async (req, res) => {
 
 module.exports = { formatResults };
 
-app.listen(PORT, () => {
-    console.log(`Server běží na http://localhost:${PORT}`);
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, "0.0.0.0", () => {
+    console.log(`Server běží na portu http://localhost:${PORT}`);
 });
